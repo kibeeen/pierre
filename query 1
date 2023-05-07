@@ -1,0 +1,4 @@
+SELECT *
+FROM employee_attendance
+WHERE attendance_status IS NOT NULL;
+

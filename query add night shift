@@ -1,0 +1,14 @@
+SELECT ea.employee_name, ean.shift_schedule_month, ats.shift_name,
+COUNT(attendance_date) as total_night_shift_days
+FROM employee_attendance ea
+LEFT JOIN employee_attendance_nightshifts ean
+ON ea.employee_name = ean.employee_name
+INNER JOIN attendance_shifts ats
+ON ean.shift_id = ats.shift_id
+
+WHERE ea.attendance_date BETWEEN ean.shift_schedule_first_day AND ean.shift_schedule_last_day
+AND shift_schedule_month = 'March'
+
+
+GROUP BY ea.employee_name
+ORDER BY total_night_shift_days DESC

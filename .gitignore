@@ -1,7 +1,7 @@
 # Excel file
-skill_test_data.xlsx
-~$skill_test_data.xlsx
+# skill_test_data.xlsx
+# ~$skill_test_data.xlsx
 
 # SQLite database file
-pandas_pivot.db
-~pandas_pivot.db
+# pandas_pivot.db
+# ~pandas_pivot.db
