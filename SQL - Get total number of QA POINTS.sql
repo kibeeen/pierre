@@ -49,7 +49,9 @@ SELECT
     COALESCE(scheduling_client_overlay, 0) +
     COALESCE(scheduling_mobile_banner, 0) +
     COALESCE(scheduling_sidebar, 0) +
-    COALESCE(scheduling_navbar, 0) AS total_correct_qa_points,
-    *
-FROM qad_tickets
+    COALESCE(scheduling_navbar, 0) AS qa_points,
+    ticket_name, employee_id, CAST(total_correct_qa_points AS FLOAT), CAST(total_user_qa_score AS FLOAT), qa_ticket_build_notes,
+    CAST((total_user_qa_score / total_correct_qa_points) AS DECIMAL) as qa_percentage
+FROM ticket_qa_scores
 
+WHERE employee_id = 4278 AND qa_ticket_build_notes IS NOT NULL AND qa_ticket_build_notes <> ''
