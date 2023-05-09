@@ -1,4 +1,4 @@
-CREATE TABLE IF NOT EXISTS qad_tickets (
+CREATE TABLE IF NOT EXISTS ticket_qa_scores (
 
 qa_ticket_id INT,
 employee_id INT,
@@ -53,9 +53,10 @@ scheduling_carousel INT(1),
 scheduling_static_tile INT(1),
 scheduling_tournament_page INT(1),
 scheduling_client_overlay INT(1),
-scheduling_mobile_banner INT(1), __ missing comma here
-scheduling_sidebar INT (  2  ), __ extra spaces here
-scheduling_navbar  int ( 2 ), __ extra spaces here
-qa_ticket_build_notes  int ( 2 ) __ missing comma here
-
+scheduling_mobile_banner INT(1),
+scheduling_sidebar INT(1),
+scheduling_navbar INT(1),
+qa_ticket_build_notes INT(1),
+total_correct_qa_points INT,
+total_user_qa_score INT
 );
